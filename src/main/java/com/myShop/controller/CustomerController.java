@@ -41,7 +41,7 @@ public class CustomerController {
     @GetMapping("/list")
     public ModelAndView listCustomers() {
         ModelAndView modelAndView = new ModelAndView("/list");
-        modelAndView.addObject("s",customerService.findAllByOrderByIdDesc());
+        modelAndView.addObject("customers",customerService.findAllByOrderByIdDesc());
         return modelAndView;
     }
 

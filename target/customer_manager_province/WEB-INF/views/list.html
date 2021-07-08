@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-    <script src="/resource/javascript/customer.js"></script>
+    <script src="/resource/javascript/app.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/jquery.validation/1.15.1/jquery.validate.min.js"></script>
 </head>
@@ -124,7 +124,7 @@
             <div class="col12">
                 <button type="button" class="btn btn-secondary updateCustomer"
                         data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo"
-                        onclick="loadAddnew()">
+                        onclick="loadAddew()">
                     <i class="fa fa-plus-circle"></i>
                     Create
                 </button>
@@ -146,7 +146,7 @@
     </tr>
     </thead>
     <tbody>
-    <th:block th:each="customer: ${customers}">
+    <th:block th:each="customer : ${customers}">
         <tr th:id="'row'+${customer.id}">
             <td th:text="${customer.id}"></td>
             <td th:text="${customer.name}"></td>
@@ -179,19 +179,19 @@
                 <form>
                     <div class="md-6">
                         <label class="form-label">Name:</label>
-                        <input type="text" class="form-control" id="upName">
+                        <input type="text" class="form-control" id="name">
                     </div>
                     <div class="md-6">
                         <label class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" id="upEmail">
+                        <input type="text" class="form-control" id="email">
                     </div>
                     <div class="md-6">
                         <label class="col-form-label">Phone Number:</label>
-                        <input type="text" class="form-control" id="upPhone">
+                        <input type="text" class="form-control" id="phone">
                     </div>
                     <div class="md-6">
                         <label>Province</label>
-                        <select class="form-control" name="upProvince" id="upProvince">
+                        <select class="form-control" name="upProvince" id="province">
                             <option th:each="p : ${province}"
                                     th:value="${p.getId()}"
                                     th:text="${p.getName()}">
